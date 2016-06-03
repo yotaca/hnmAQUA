@@ -1,0 +1,907 @@
+<nucleusskin>
+	<meta>
+		<skin name="hnmaqua" />
+		<template name="hnm/slist01" />
+		<template name="hnm/thum01" />
+		<template name="hnm/slist02" />
+		<template name="hnm/show01" />
+		<template name="hnm/item01" />
+		<template name="hnm/slist03" />
+		<template name="hnm/thum02" />
+		<template name="hnm/aitems01" />
+		<info><![CDATA[Bootstrapを使ったNucleusCMSのレスポンシブなスキンです。
+hnmAqua Skin. Code licensed MIT, docs (c) 2016 Hanamachi-Ya! 
+Bootstrap と glyphicons-halflings-regular font は MIT 。ドキュメントは CC BY 3.0. ライセンスで配布されています。
+添付の画像は「フリー写真素材ぱくたそ」の利用規約に従ってください。
+https://www.pakutaso.com/userpolicy.html
+]]></info>
+	</meta>
+
+
+	<skin name="hnmaqua" type="text/html" includeMode="skindir" includePrefix="hnmaqua/">
+		<description>hnmSkins made by Bootstrap</description>
+		<part name="archive"><![CDATA[<!DOCTYPE html>
+<html lang="ja">
+<head>
+<%parsedinclude(head)%>
+</head>
+<body id="itempage">
+<%parsedinclude(navbar)%>
+
+<div class="col-al-12 visible-xs-block">
+<div class="jumbotron">
+<%parsedinclude(mainimg)%>
+</div>
+</div>
+
+<div class="container">
+<div class="row row-offcanvas row-offcanvas-right">
+<div class="col-xs-12 col-md-9">
+<div class="jumbotron hidden-xs">
+<%parsedinclude(mainimg)%>
+</div>
+
+<div class="row">
+<ol class="breadcrumb col-xs-12 col-sm-7">
+<li><a href="<%blogsetting(url)%>"><%blogsetting(name)%></a></li>
+<li><a href="<%blogsetting(url)%>?archivelist=<%blogsetting(id)%>">アーカイブリスト</a></li>
+<li><%archivedate(ja_JP,%Y年 %m月)%>の記事</li>
+</ol>
+
+<div class="snslink col-xs-12 col-sm-5">
+<%parsedinclude(snslink)%>
+</div>
+</div>
+
+<div class="blog-post row mr0 ml5">
+<%archive(hnm/slist03)%>
+
+<nav class="text-center">
+<ul class="pager">
+<li><%prevlink(前のページ)%></li>
+<li><%nextlink(次のページ)%></li>
+</ul>
+</nav>
+</div>
+
+</div>
+
+<%parsedinclude(sidebar)%>
+</div>
+</div>
+
+<footer>
+<%parsedinclude(footer)%>
+</footer>
+<%parsedinclude(javascript)%>
+</body>
+</html>]]></part>
+
+		<part name="archivelist"><![CDATA[<!DOCTYPE html>
+<html lang="ja">
+<head>
+<%parsedinclude(head)%>
+</head>
+<body id="itempage">
+<%parsedinclude(navbar)%>
+
+<div class="col-al-12 visible-xs-block">
+<div class="jumbotron">
+<%parsedinclude(mainimg)%>
+</div>
+</div>
+
+<div class="container">
+<div class="row row-offcanvas row-offcanvas-right">
+<div class="col-xs-12 col-md-9">
+<div class="jumbotron hidden-xs">
+<%parsedinclude(mainimg)%>
+</div>
+
+<div class="row">
+<ol class="breadcrumb col-xs-12 col-sm-7">
+<li><a href="<%blogsetting(url)%>"><%blogsetting(name)%></a></li>
+<li>アーカイブリスト</li>
+</ol>
+
+<div class="snslink col-xs-12 col-sm-5">
+<%parsedinclude(snslink)%>
+</div>
+</div>
+
+<ul class="blog-post row mr0 ml5">
+<%archivelist(hnm/slist01)%>
+</ul>
+
+</div>
+
+<%parsedinclude(sidebar)%>
+</div>
+</div>
+
+<footer>
+<%parsedinclude(footer)%>
+</footer>
+<%parsedinclude(javascript)%>
+</body>
+</html>]]></part>
+
+		<part name="error"><![CDATA[<!DOCTYPE html>
+<html lang="ja">
+<head>
+<%parsedinclude(head)%>
+</head>
+<body id="errorpage">
+<%parsedinclude(navbar)%>
+
+<div class="col-al-12 visible-xs-block">
+<div class="jumbotron">
+<%parsedinclude(mainimg)%>
+</div>
+</div>
+
+<div class="container">
+<div class="row row-offcanvas row-offcanvas-right">
+<div class="col-xs-12 col-md-9">
+<div class="jumbotron hidden-xs">
+<%parsedinclude(mainimg)%>
+</div>
+
+<p><%errormessage%></p>
+<p class="txtC"><a href="<%referer%>">戻る</a></p>
+</div>
+
+<%parsedinclude(sidebar)%>
+</div>
+</div>
+
+<footer>
+<%parsedinclude(footer)%>
+</footer>
+<%parsedinclude(javascript)%>
+</body>
+</html>]]></part>
+
+		<part name="footer"><![CDATA[<p class="footer-copyright text-center">
+© 2016 <a href="//hanamachi.com" target="recommend">Hanamachi-Ya!</a><br>
+Powered by <a href="//japan.nucleuscms.org/" target="recommend">NucleusCMS</a> &
+<a href="//getbootstrap.com/" target="recommend">Bootstrap</a>.
+</p>
+<!--button id="btn_top" class="btn btn-primary" type="button"-->
+<button id="btn_top" class="" type="button">
+<span class="glyphicon glyphicon-circle-arrow-up" aria-hidden="true"></span>
+</button>]]></part>
+
+		<part name="head"><![CDATA[<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<%if(skintype,item)%>
+<title><%itemtitle%>：<%blogsetting(name)%></title><!--個別アイテム-->
+<meta name="description" content="<%blogsetting(desc)%>">
+<meta name="keywords" content="">
+<meta property="og:type" content="website">
+<meta property="og:title" content="<%itemtitle%>：<%blogsetting(name)%>">
+<meta property="og:description" content="<%blogsetting(desc)%>">
+<meta property="og:url" content="<%blogsetting(url)%>?itemid=<%itemid%>">
+<meta property="og:image" content="<%skinfile(img/)%>i<%itemid%>.jpg">
+
+<%elseif(skintype,archivelist)%>
+<title>アーカイブリスト：<%blogsetting(name)%></title><!--月別アーカイブリスト-->
+<meta name="description" content="<%blogsetting(desc)%>">
+<meta name="keywords" content="">
+<meta property="og:type" content="website">
+<meta property="og:title" content="アーカイブリスト：<%blogsetting(name)%>">
+<meta property="og:description" content="<%blogsetting(desc)%>">
+<meta property="og:url" content="<%blogsetting(url)%>">
+<meta property="og:image" content="<%skinfile(img/)%><%blogsetting(short)%>.jpg">
+
+<%elseif(skintype,archive)%>
+<title><%archivedate(ja_JP,%Y年 %m月)%>の記事：<%if(category)%><%category(name)%>：<%endif%><%blogsetting(name)%></title><!--月別アーカイブ-->
+<meta name="description" content="<%blogsetting(desc)%>">
+<meta name="keywords" content="">
+<meta property="og:type" content="website">
+<meta property="og:title" content="<%archivedate(ja_JP,%Y年 %m月)%>の記事：<%if(category)%><%category(name)%>：<%endif%><%blogsetting(name)%>">
+<meta property="og:description" content="<%blogsetting(desc)%>">
+<meta property="og:url" content="<%blogsetting(url)%>">
+<meta property="og:image" content="<%skinfile(img/)%><%blogsetting(short)%>.jpg">
+
+<%elseif(skintype,search)%>
+<title><%query%>：<%blogsetting(name)%></title><!--検索結果-->
+<meta name="description" content="<%blogsetting(desc)%>">
+<meta name="keywords" content="">
+<meta property="og:type" content="website">
+<meta property="og:title" content="<%query%>：<%blogsetting(name)%>">
+<meta property="og:description" content="<%blogsetting(desc)%>">
+<meta property="og:url" content="<%blogsetting(url)%>">
+<meta property="og:image" content="<%skinfile(img/)%><%blogsetting(short)%>.jpg">
+
+<%elseif(skintype,member)%>
+<title><%member(name)%>：<%blogsetting(name)%></title><!--ユーザーページ-->
+<meta name="description" content="<%blogsetting(desc)%>">
+<meta name="keywords" content="">
+<meta property="og:type" content="website">
+<meta property="og:title" content="<%member(name)%>：<%blogsetting(name)%>">
+<meta property="og:description" content="<%blogsetting(desc)%>">
+<meta property="og:url" content="<%blogsetting(url)%>?memberid=<%member(id)%>">
+<meta property="og:image" content="<%skinfile(img/)%><%blogsetting(short)%>.jpg">
+
+<%elseif(category)%>
+<title><%category(name)%>：<%blogsetting(name)%></title><!--カテゴリトップ-->
+<meta name="description" content="<%category(desc)%>">
+<meta name="keywords" content="">
+<meta property="og:type" content="website">
+<meta property="og:title" content="<%category(name)%>：<%blogsetting(name)%>">
+<meta property="og:description" content="<%category(desc)%>">
+<meta property="og:url" content="<%blogsetting(url)%>?catid=<%category(id)%>">
+<meta property="og:image" content="<%skinfile(img/)%>c<%category(id)%>.jpg">
+
+<%else%>
+<title><%blogsetting(name)%></title><!--トップ-->
+<meta name="description" content="<%blogsetting(desc)%>">
+<meta name="keywords" content="">
+<meta property="og:type" content="website">
+<meta property="og:title" content="<%blogsetting(name)%>">
+<meta property="og:description" content="<%blogsetting(desc)%>">
+<meta property="og:url" content="<%blogsetting(url)%>">
+<meta property="og:image" content="<%skinfile(img/)%><%blogsetting(short)%>.jpg">
+<%endif%>
+
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="<%skinfile(css/)%>bootstrap.css">
+<link rel="stylesheet" href="<%skinfile(css/)%>def.css"><!--上書き用のCSS-->
+
+<!-- 色別CSSと、ブログのショートネームでカスタマイズCSSを指定
+<link rel="stylesheet" href="<%skinfile(css/)%>akaplus.css">
+<link rel="stylesheet" href="<%skinfile(css/)%>gldplus.css">
+<link rel="stylesheet" href="<%skinfile(css/)%>grnplus.css">
+<link rel="stylesheet" href="<%skinfile(css/)%>konplus.css">
+<link rel="stylesheet" href="<%skinfile(css/)%>pprplus.css">
+<link rel="stylesheet" href="<%skinfile(css/)%>vilplus.css">
+<link rel="stylesheet" href="<%skinfile(css/)%><%blogsetting(short)%>.css">
+-->
+
+<!--[if lt IE 9]>
+<script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->]]></part>
+
+		<part name="imagepopup"><![CDATA[<!DOCTYPE html>
+<html>
+<head>
+<%parsedinclude(head)%>
+</head>
+<body onblur="window.close()">
+<a href="javascript:window.close();"><%image%></a>
+</body>
+</html>]]></part>
+
+		<part name="index"><![CDATA[<!DOCTYPE html>
+<html lang="ja">
+<head>
+<%parsedinclude(head)%>
+</head>
+<body id="<%if(category)%>itempage<%else%>toppage<%endif%>">
+<%parsedinclude(navbar)%>
+
+<div class="col-al-12 visible-xs-block">
+<div class="jumbotron">
+<%parsedinclude(mainimg)%>
+</div>
+</div>
+
+<div class="container">
+<div class="row row-offcanvas row-offcanvas-right">
+<div class="col-xs-12 col-md-9">
+<div class="jumbotron hidden-xs">
+<%parsedinclude(mainimg)%>
+</div>
+
+<%ifnot(category)%>
+<div class="row">
+<div class="snslink col-xs-12 col-sm-5 col-sm-offset-7">
+<%parsedinclude(snslink)%>
+</div>
+</div>
+
+<div class="row hnm_items">
+<%blog(hnm/aitems01,14)%>
+</div>
+<%else%>
+
+<div class="row">
+<ol class="breadcrumb col-xs-12 col-sm-7">
+<li><a href="<%blogsetting(url)%>"><%blogsetting(name)%></a></li>
+<li class="active"><%category(name)%></li>
+</ol>
+
+<div class="snslink col-xs-12 col-sm-5">
+<%parsedinclude(snslink)%>
+</div>
+</div>
+
+<div class="blog-post row mr0 ml5">
+<%blog(hnm/slist03,6)%>
+
+<nav class="text-center">
+<ul class="pager">
+<li><%prevlink(前のページ,6)%></li>
+<li><%nextlink(次のページ,6)%></li>
+</ul>
+</nav>
+</div>
+<%endif%>
+</div>
+
+<%parsedinclude(sidebar)%>
+</div>
+</div>
+
+<footer>
+<%parsedinclude(footer)%>
+</footer>
+<%parsedinclude(javascript)%>
+</body>
+</html>]]></part>
+
+		<part name="item"><![CDATA[<!DOCTYPE html>
+<html lang="ja">
+<head>
+<%parsedinclude(head)%>
+</head>
+<body id="itempage">
+<%parsedinclude(navbar)%>
+
+<div class="col-al-12 visible-xs-block">
+<div class="jumbotron">
+<%parsedinclude(mainimg)%>
+</div>
+</div>
+
+<div class="container">
+<div class="row row-offcanvas row-offcanvas-right">
+<div class="col-xs-12 col-md-9">
+<div class="jumbotron hidden-xs">
+<%parsedinclude(mainimg)%>
+</div>
+
+<div class="row">
+<ol class="breadcrumb col-xs-12 col-sm-7">
+<li><a href="<%blogsetting(url)%>"><%blogsetting(name)%></a></li>
+<li><a href="<%blogsetting(url)%>?catid=<%category(id)%>"><%category(name)%></a></li>
+<li class="active"><%itemtitle%></li>
+</ol>
+
+<div class="snslink col-xs-12 col-sm-5">
+<%parsedinclude(snslink)%>
+</div>
+</div>
+
+<div class="blog-post hnmtyp">
+<%item(hnm/item01)%>
+
+<div class="fb-comments" data-href="<%blogsetting(url)%>?catid=<%category(id)%>&amp;itemid=<%itemid%>" data-width="100%" data-numposts="5"></div>
+
+<nav class="text-center">
+<ul class="pager">
+<li><%prevlink(前の記事)%></li>
+<li><%nextlink(次の記事)%></li>
+</ul>
+</nav>
+</div>
+</div>
+
+<%parsedinclude(sidebar)%>
+</div>
+</div>
+
+<footer>
+<%parsedinclude(footer)%>
+</footer>
+<%parsedinclude(javascript)%>
+</body>
+</html>]]></part>
+
+		<part name="javascript"><![CDATA[<div id="fb-root" class="hide"></div>
+<div id="nucleus_lf" class="hide"></div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script><!--jQueryライブラリを読み込む-->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script><!--Bootstrapライブラリを読み込む-->
+<script src="<%skinfile(js/hnmbase.js)%>"></script><!--デフォルトJS-->
+
+<noscript>
+<!--アクセス解析用のイメージを貼付けます-->
+</noscript>]]></part>
+
+		<part name="mainimg"><![CDATA[<!--Mainimg-->
+<img src="<%skinfile(img/)%>def.jpg"><!-- デフォルトイメージ-->
+
+<!-- デフォルトイメージの代わりに、色別のイメージファイルか、ブログのショートネームでイメージを指定します
+<img src="<%skinfile(img/)%>aka.jpg">
+<img src="<%skinfile(img/)%>gld.jpg">
+<img src="<%skinfile(img/)%>grn.jpg">
+<img src="<%skinfile(img/)%>kon.jpg">
+<img src="<%skinfile(img/)%>ppr.jpg">
+<img src="<%skinfile(img/)%>vil.jpg">
+<img src="<%skinfile(img/)%><%blogsetting(short)%>.jpg">
+-->
+<!--/Mainimg-->
+
+<div class="hnmtitlebox">
+<%if(skintype,item)%><!--個別アイテム-->
+<h1>
+<a href="<%blogsetting(url)%>"><%blogsetting(name)%></a>
+<a href="<%blogsetting(url)%>?catid=<%category(id)%>" class="small plr2"><%category(name)%></a>
+</h1>
+<p><%blogsetting(desc)%></p>
+
+<%elseif(skintype,archivelist)%><!--月別アーカイブリスト-->
+<h1><%blogsetting(name)%></h1>
+<p>アーカイブリスト</p>
+
+<%elseif(skintype,archive)%><!--月別アーカイブ-->
+<h1><%blogsetting(name)%></h1>
+<p><%if(category)%><%category(name)%>：<%endif%><%archivedate(ja_JP,%Y年 %m月)%>の記事</p>
+
+<%elseif(skintype,member)%><!--ユーザーページ-->
+<h1><%blogsetting(name)%></h1>
+<p><%member(name)%>のユーザー情報</p>
+
+<%elseif(skintype,search)%><!--検索結果-->
+<h1><%blogsetting(name)%></h1>
+<p>「<%query%>」の検索結果</p>
+
+<%elseif(skintype,error)%><!--エラー-->
+<h1>エラーです</h1>
+
+<%elseif(category)%><!--カテゴリトップ-->
+<h1><%category(name)%><a href="<%blogsetting(url)%>" class="small plr2"><%blogsetting(name)%></a></h1>
+<p><%category(desc)%></p>
+
+<%else%><!--トップ-->
+<h1><%blogsetting(name)%></h1>
+<p><%blogsetting(desc)%></p>
+
+<%endif%></div>]]></part>
+
+		<part name="member"><![CDATA[<!DOCTYPE html>
+<html lang="ja">
+<head>
+<%parsedinclude(head)%>
+</head>
+<body id="itempage">
+<%parsedinclude(navbar)%>
+
+<div class="col-al-12 visible-xs-block">
+<div class="jumbotron">
+<%parsedinclude(mainimg)%>
+</div>
+</div>
+
+<div class="container">
+<div class="row row-offcanvas row-offcanvas-right">
+<div class="col-xs-12 col-md-9">
+<div class="jumbotron hidden-xs">
+<%parsedinclude(mainimg)%>
+</div>
+
+<div class="row">
+<ol class="breadcrumb col-xs-12 col-sm-7">
+<li><a href="<%blogsetting(url)%>"><%blogsetting(name)%></a></li>
+<li>メンバー情報</li>
+</ol>
+
+<div class="snslink col-xs-12 col-sm-5">
+<%parsedinclude(snslink)%>
+</div>
+</div>
+
+<div class="blog-post row mr0 ml5">
+<h2>本名: <%member(realname)%></h2>
+<p>WEBサイト: <a href="<%member(url)%>"><%member(url)%></a></p>
+<h2>メッセージを送る</h2>
+<!--%membermailform%-->
+</div>
+
+</div>
+
+<%parsedinclude(sidebar)%>
+</div>
+</div>
+
+<footer>
+<%parsedinclude(footer)%>
+</footer>
+<%parsedinclude(javascript)%>
+</body>
+</html>]]></part>
+
+		<part name="navbar"><![CDATA[<nav class="navbar navbar-inverse navbar-fixed-top"><!--濃色-->
+<!--<nav class="navbar navbar-default navbar-fixed-top">--><!--薄色-->
+<div class="container">
+
+<div class="navbar-header">
+<div class="col-xs-1"><!--Home-->
+<a class="navbar-brand hnmtyp" href="<%blogsetting(url)%>">
+<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+</a>
+</div><!--/Home-->
+
+<div class="col-xs-10 visible-xs-block"><!--Searchform-->
+<form method="get" action="index.php" class="navbar-form hnmtyp" role="search">
+<div class="form-group">
+<input type="hidden" name="amount" value="0" />
+<input type="hidden" name="blogid" value="<%blogsettingid%>" />
+<input type="text" name="query" class="form-control" placeholder="キーワード">
+</div>
+<button type="submit" class="btn btn-default">検索</button>
+</form>
+</div><!--/Searchform-->
+
+<div class="col-xs-1 visible-xs-block"><!--Toggleswitch -->
+<button type="button" class="navbar-toggle collapsed hnmtyp" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+</div><!--/Toggleswitch -->
+</div>
+
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<ul class="nav navbar-nav">
+<li class="dropdown"><!--Categorylink-->
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">カテゴリ<span class="caret"></span></a>
+<ul class="dropdown-menu">
+<%categorylist(hnm/slist01)%>
+</ul>
+</li><!--/Categorylink-->
+<li><a href="<%blogsetting(url)%>?archivelist=<%blogsetting(id)%>">アーカイブリスト</a></li><!--Archive-->
+</ul>
+
+<ul class="nav navbar-nav navbar-right">
+<li class="hidden-xs"><!--Searchform-->
+<form method="get" action="index.php" class="navbar-form hnmtyp" role="search">
+<div class="form-group">
+<input type="hidden" name="amount" value="0" />
+<input type="hidden" name="blogid" value="<%blogsetting(id)%>" />
+<input type="text" name="query" class="form-control" placeholder="キーワード">
+</div>
+<button type="submit" class="btn btn-default ">検索</button>
+</form>
+</li><!--/Searchform-->
+
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+<ul class="dropdown-menu">
+
+<%if(loggedin)%>
+<li><a href="<%blogsetting(url)%>?memberid=<%member(yourid)%>">マイページ</a></li>
+<%if(onteam)%>
+<li role="separator" class="divider"></li>
+<li><a href="<%addlink%>" onclick="<%addpopupcode%>" title="新規投稿">新規投稿</a></li><%if(skintype,item)%>
+<li><a href="<%adminurl%>bookmarklet.php?action=edit&itemid=<%itemid%>" onclick="<%addpopupcode%>" title="記事編集">記事編集</a></li><%endif%>
+<%if(admin)%><li><a href="<%adminurl%>">管理画面</a></li><%endif%>
+<li role="separator" class="divider"></li>
+<li><a href="<%blogsetting(url)%>?action=logout">ログアウト</a></li>
+<%endif%>
+<%else%>
+<li><a href="#" id="hnm_login">ログイン</a></li>
+<%endif%>
+</ul>
+</li>
+</ul>
+</div><!-- /.navbar-collapse -->
+</div><!-- /.container-fluid -->
+</nav>]]></part>
+
+		<part name="search"><![CDATA[<!DOCTYPE html>
+<html lang="ja">
+<head>
+<%parsedinclude(head)%>
+</head>
+<body id="itempage">
+<%parsedinclude(navbar)%>
+
+<div class="col-al-12 visible-xs-block">
+<div class="jumbotron">
+<%parsedinclude(mainimg)%>
+</div>
+</div>
+
+<div class="container">
+<div class="row row-offcanvas row-offcanvas-right">
+<div class="col-xs-12 col-md-9">
+<div class="jumbotron hidden-xs">
+<%parsedinclude(mainimg)%>
+</div>
+
+<div class="row">
+<ol class="breadcrumb col-xs-12 col-sm-7">
+<li><a href="<%blogsetting(url)%>"><%blogsetting(name)%></a></li>
+<li><%query%>の検索結果</li>
+</ol>
+
+<div class="snslink col-xs-12 col-sm-5">
+<%parsedinclude(snslink)%>
+</div>
+</div>
+
+<div class="blog-post row mr0 ml5">
+<%searchresults(hnm/slist03,10)%>
+
+<nav class="text-center">
+<ul class="pager">
+<li><%prevlink(前のページ,10)%></li>
+<li><%nextlink(次のページ,10)%></li>
+</ul>
+</nav>
+</div>
+
+</div>
+
+<%parsedinclude(sidebar)%>
+</div>
+</div>
+
+<footer>
+<%parsedinclude(footer)%>
+</footer>
+<%parsedinclude(javascript)%>
+</body>
+</html>]]></part>
+
+		<part name="sidebar"><![CDATA[<div class="col-md-3 hidden-sm hidden-xs pl20 blog-sidebar">
+
+<div class="sidebar-module sidebar-module-inset"><!--Announce:固定アイテム-->
+<h3>このサイトについて</h3>
+<p>「<a href="//japan.nucleuscms.org" target="recommend">NucleusCMS</a>」に「<a href="//getbootstrap.com" target="recommend">Bootstrap</a>」をカスタマイズしたスキンを使って「<a href="//hanamachi.com" target="recommend">はなまちや</a>」が制作しました。
+デモ用の画像の多くは「<a href="//www.pakutaso.com" target="recommend">フリー写真素材ぱくたそ</a>」の画像を使用しています。</p>
+<ul>
+<li><a href="//yotaca.com/" target="sample">デフォルト</a></li>
+<li><a href="//yotaca.com/aka/" target="sample">レッド</a></li>
+<li><a href="//yotaca.com/gld/" target="sample">ゴールド</a></li>
+<li><a href="//yotaca.com/grn/" target="sample">グリン</a></li>
+<li><a href="//yotaca.com/kon/" target="sample">紺</a></li>
+<li><a href="//yotaca.com/ppr/" target="sample">パープル</a></li>
+<li><a href="//yotaca.com/vil/" target="sample">バイオレット</a></li>
+</ul>
+</div><!--/Announce-->
+
+<%ifnot(category)%>
+<!--Newitem:新規リスト-->
+<%blog(hnm/slist02,3)%>
+<!--/Newitem-->
+
+<%else%>
+<div class="thumbnail-list"><!--recomend:新規リスト-->
+<%blog(hnm/thum02,5)%>
+</div><!--/recomend-->
+<%endif%>
+
+<div class="sidebar-module"><!--archive-->
+<h3>いままでの記事</h3>
+<ol class="list-unstyled">
+<%archivelist(hnm/slist01,,12)%>
+</ol>
+</div><!--/archive-->
+
+<div class="sidebar-module"><!--links-->
+<h3>おススメリンク</h3>
+<ol class="list-unstyled">
+<li><a href="http://hanamachi.com/" title="はなまるスキンの開発元" target="recommend">Hanamachi-Ya!</a></li>
+<li><a href="http://japan.nucleuscms.org/" title="Nucleus CMS の公式" target="recommend">Nucleus</a></li>
+<li><a href="http://getbootstrap.com/" title="CSSフレームワーク" target="recommend">Bootstrap</a></li>
+<li><a href="https://www.pakutaso.com/" title="デモ版写真提供元" target="recommend">フリー写真素材ぱくたそ</a></li>
+</ol>
+</div><!--/links-->
+
+</div>]]></part>
+
+		<part name="snslink"><![CDATA[<a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja" data-hashtags="<%blogsetting(name)%>"></a>
+<span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"
+<%if(skintype,item)%> data-href="<%blogsetting(url)%>?itemid=<%itemid%>">
+<%elseif(skintype,archivelist)%> data-href="<%blogsetting(url)%>?archivelist=<%blogsetting(id)%>">
+<%elseif(skintype,archive)%> data-href="<%blogsetting(url)%>?blogid=<%blogsetting(id)%>&archive=<%archivedate(ja_JP,%Y)%>-<%archivedate(ja_JP,%m)%>">
+<%elseif(skintype,search)%> data-href="<%blogsetting(url)%>">
+<%elseif(skintype,member)%> data-href="<%blogsetting(url)%>?memberid=<%member(id)%>">
+<%elseif(category)%> data-href="<%blogsetting(url)%>?catid=<%category(id)%>">
+<%else%> data-href="<%blogsetting(url)%>"><%endif%>
+</span>]]></part>
+
+	</skin>
+
+
+	<template name="hnm/slist01">
+		<description>hnmAqua ショートリスト用</description>
+		<part name="ARCHIVELIST_LISTITEM"><![CDATA[<li><a href="<%archivelink%>"><%year%>. <%month%></a></li>
+]]></part>
+
+		<part name="CATLIST_LISTITEM"><![CDATA[<li><a href="./?catid=<%catid%>"><%catname%></a></li>
+]]></part>
+
+		<part name="EDITLINK"><![CDATA[<a href="<%editlink%>" onclick="<%editpopupcode%>" class="pull-right">
+<span class="glyphicon default glyphicon-pencil small" aria-hidden="true"></span>
+</a>]]></part>
+
+		<part name="FORMAT_DATE"><![CDATA[%Y/ %m/ %d %H:%M:%S]]></part>
+
+		<part name="ITEM"><![CDATA[<div class="col-xs-12 col-lg-6 h200max">
+<h2 class="blog-post-title"><a href="<%blogurl%>?catid=<%catid%>&itemid=<%itemid%>"><%title%></a><%edit%></h2>
+<p class="blog-post-meta text-right"><%date%></p>
+<p><%syndicate_description(200)%><a href="<%blogurl%>?catid=<%catid%>&itemid=<%itemid%>" class="mlr1">つづき……</a></p>
+</div>
+]]></part>
+
+		<part name="SEARCH_HIGHLIGHT"><![CDATA[\0]]></part>
+
+	</template>
+
+
+	<template name="hnm/thum01">
+		<description>hnmAqua サムネール用</description>
+		<part name="EDITLINK"><![CDATA[<a href="<%editlink%>" onclick="<%editpopupcode%>" class="pull-left">
+<span class="glyphicon default glyphicon-pencil" aria-hidden="true"></span>
+</a>]]></part>
+
+		<part name="IMAGE_CODE"><![CDATA[<img src="<%link%>" title="<%text%>" alt="<%text%>">]]></part>
+
+		<part name="ITEM"><![CDATA[<div class="col-xs-12 col-sm-4 col-lg-3">
+<div class="thumbnail">
+<a href="<%blogurl%>?catid=<%catid%>&itemid=<%itemid%>" class="hnmthumimg">
+<!--<%TrimImage(0,0,0,1)%>--><!--サムネイルはプラグインが必要-->
+<img src="<%skinfile(img/c)%><%catid%>.jpg">
+</a>
+<h2><a href="<%blogurl%>?catid=<%catid%>&itemid=<%itemid%>"><%title%></a></h2>
+<div class="caption">
+<p class="thum-desc"><%syndicate_description(100)%></p>
+<p class="text-right"><%edit%><a href="<%blogurl%>?catid=<%catid%>&itemid=<%itemid%>" class="btn btn-sm btn-primary" role="button">この記事を読む »</a></p>
+</div>
+</div>
+</div>
+]]></part>
+
+	</template>
+
+
+	<template name="hnm/slist02">
+		<description>hnmAqua ショートリスト用</description>
+		<part name="ITEM"><![CDATA[<div class="list-group">
+<a href="<%blogurl%>?catid=<%catid%>&itemid=<%itemid%>" class="list-group-item">
+<h3 class="list-group-item-heading"><%title%></h3>
+<p class="list-group-item-text text-justify"><%syndicate_description(80)%></p>
+</a>
+</div>
+]]></part>
+
+	</template>
+
+
+	<template name="hnm/show01">
+		<description>hnmAqua 引用</description>
+		<part name="EDITLINK"><![CDATA[<a href="<%editlink%>" onclick="<%editpopupcode%>" class="pull-right">
+<span class="glyphicon default glyphicon-pencil" aria-hidden="true"></span>
+</a>]]></part>
+
+		<part name="ITEM"><![CDATA[<%edit%>
+<%body%>
+<%morelink%>]]></part>
+
+		<part name="MORELINK"><![CDATA[<p class="txtR"><a href="<%blogurl%>?catid=<%catid%>&itemid=<%itemid%>">……つづき</a></p>]]></part>
+
+	</template>
+
+
+	<template name="hnm/item01">
+		<description>hnmAqua アイテム表示用</description>
+		<part name="EDITLINK"><![CDATA[<a href="<%editlink%>" onclick="<%editpopupcode%>" class="pull-right">
+<span class="glyphicon default glyphicon-pencil" aria-hidden="true"></span>
+</a>]]></part>
+
+		<part name="FORMAT_DATE"><![CDATA[%Y/ %m/ %d %H:%M:%S]]></part>
+
+		<part name="IMAGE_CODE"><![CDATA[<img src="<%link%>" title="<%text%>" alt="<%text%>">
+]]></part>
+
+		<part name="ITEM_FOOTER"><![CDATA[<h2 class="blog-post-title"><%title%><a href="<%blogurl%>?memberid=<%author(id)%>" class="small mlr1"><%author(realname)%></a><%edit%></h2>
+<p class="blog-post-meta text-right"><%date%></p>
+<div class="blog-post-item col-al-12 imgwmax">
+<%body%>
+<%more%>
+</div>
+]]></part>
+
+	</template>
+
+
+	<template name="hnm/slist03">
+		<description>hnmAqua ショートリスト用</description>
+		<part name="EDITLINK"><![CDATA[<a href="<%editlink%>" onclick="<%editpopupcode%>" class="pull-right">
+<span class="glyphicon default glyphicon-pencil small" aria-hidden="true"></span>
+</a>]]></part>
+
+		<part name="FORMAT_DATE"><![CDATA[%Y/ %m/ %d %H:%M:%S]]></part>
+
+		<part name="IMAGE_CODE"><![CDATA[<img src="<%link%>" title="<%text%>" alt="<%text%>">]]></part>
+
+		<part name="ITEM_FOOTER"><![CDATA[<div class="blog-post-list">
+<h2 class="blog-post-title">
+<a href="<%blogurl%>?catid=<%catid%>&itemid=<%itemid%>"><%title%></a>
+<a href="<%author(url)%>" class="small mlr1" class="mlr1"><%author(realname)%></a>
+<%edit%>
+</h2>
+<p class="blog-post-meta text-right"><%date%></p>
+<div class="thumbnail">
+<a href="<%blogurl%>?catid=<%catid%>&itemid=<%itemid%>" class="col-xs-12 col-sm-4 col-lg-3 hnmthumimg">
+<!--<%TrimImage(0,0,0,1)%>--><!--サムネイルはプラグインが必要-->
+<img src="<%skinfile(img/c)%><%catid%>.jpg">
+</a>
+<div class="blog-post-desc col-xs-12 col-sm-8 col-lg-9">
+<%syndicate_description(200)%>
+<a href="<%blogurl%>?catid=<%catid%>&itemid=<%itemid%>" class="mlr1"> つづき……</a>
+</div>
+</div>
+</div>
+]]></part>
+
+		<part name="SEARCH_NOTHINGFOUND"><![CDATA[<b><%query%></b>に該当する検索結果はありませんでした]]></part>
+
+	</template>
+
+
+	<template name="hnm/thum02">
+		<description>hnmAqua サムネール用</description>
+		<part name="IMAGE_CODE"><![CDATA[<img src="<%link%>" title="<%text%>" alt="<%text%>">]]></part>
+
+		<part name="ITEM"><![CDATA[<div class="thumbnail">
+<a href="<%blogurl%>?catid=<%catid%>&itemid=<%itemid%>" class="hnmthumimg">
+<!--<%TrimImage(0,0,0,1)%>--><!--サムネイルはプラグインが必要-->
+<img src="<%skinfile(img/c)%><%catid%>.jpg">
+</a>
+<h2><a href="<%blogurl%>?catid=<%catid%>&itemid=<%itemid%>"><%title%></a></h2>
+<div class="caption">
+<p class="thum-desc"><%syndicate_description(100)%></p>
+<p class="text-right"><a href="<%blogurl%>?catid=<%catid%>&itemid=<%itemid%>" class="btn btn-sm btn-primary" role="button">この記事を読む »</a></p>
+</div>
+</div>
+]]></part>
+
+	</template>
+
+
+	<template name="hnm/aitems01">
+		<description>hnmAqua アイテムリスト</description>
+		<part name="EDITLINK"><![CDATA[<a href="<%editlink%>" onclick="<%editpopupcode%>" class="pull-right mrr1">
+<span class="glyphicon default glyphicon-pencil" aria-hidden="true"></span>
+</a>]]></part>
+
+		<part name="FORMAT_DATE"><![CDATA[<span class="hidden-xs">%Y/</span>%m/%d]]></part>
+
+		<part name="FORMAT_TIME"><![CDATA[<span class="hidden-xs">%H:%M:%S</span>]]></part>
+
+		<part name="ITEM"><![CDATA[<div class="hnm_aitem">
+<h2 class="hnm_aitem_title">
+<a href="<%blogurl%>?catid=<%catid%>&itemid=<%itemid%>"><%title%></a>
+</h2>
+<p class="hnm_aitem_date">
+<%date%> <%time%>
+</p>
+<a href="<%blogurl%>?catid=<%catid%>&itemid=<%itemid%>" class="hnm_aitem_img">
+<!--<%TrimImage(0,0,0,1)%>--><!--サムネイルはプラグインが必要-->
+<img src="<%skinfile(img/c)%><%catid%>.jpg">
+</a>
+<div class="hnm_aitem_desc">
+<a href="<%blogurl%>?catid=<%catid%>&itemid=<%itemid%>">
+<h2 class="hnm_aitem_title"><%title%></h2>
+<span class="hnm_aitem_date">[<b><%date%></b>]</span>
+<span class="hnm_aitem_list"><%syndicate_description(180)%></span>
+<span class="hnm_aitem_box"><%syndicate_description(70)%></span>
+</a>
+<%edit%>
+</div>
+</div>
+]]></part>
+
+	</template>
+
+
+</nucleusskin>
