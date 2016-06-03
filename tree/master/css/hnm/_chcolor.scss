@@ -1,0 +1,360 @@
+//
+// Variables 色の指定だけを抜き出しました
+// --------------------------------------------------
+
+// Glyphicon
+$glyphicon-color:					$brand-darker !default;
+$glyphicon-hover-color:			$brand-primary !default;
+$glyphicon-inverse-bg:				$brand-primary !default;
+$glyphicon-inverse-color:			$brand-lightest !default;
+$glyphicon-inverse-hover-color:	$white !default;
+
+// Colors
+$brand-success:	#5cb85c !default;
+$brand-info:		#5bc0de !default;
+$brand-warning:	#f0ad4e !default;
+$brand-danger:	#d9534f !default;
+
+// Scaffolding
+$body-bg:					$white !default;
+$text-color:				$gray-dark !default;
+$link-color:					$reverse-darker !default;
+$link-hover-color:			$reverse-base !default;
+$headings-color:			$brand-darker !default;
+$component-active-color:	$white !default; //流用カラー
+$component-active-bg:	$brand-primary !default; //流用カラー
+
+// Tables
+$table-bg:					transparent !default;
+$table-bg-accent:			$brand-lighter !default;
+$table-bg-hover:			$reverse-lighter !default;
+$table-bg-active:			$table-bg-hover !default;
+$table-border-color:		$gray-mid !default;
+
+// Buttons
+$btn-default-color:			$gray-dark !default;
+$btn-default-bg:			$gray-light !default;
+$btn-default-border:		rgba($gray-mid, 0.5) !default;
+
+$btn-primary-color:		$brand-lightest !default;
+$btn-primary-bg:			$brand-primary !default;
+$btn-primary-border:		rgba($brand-dark, 0.5) !default;
+
+$btn-success-color:		$gray-lighter !default;
+$btn-success-bg:			$brand-success !default;
+$btn-success-border:		rgba(darken($btn-success-bg, 40%), 0.5) !default;
+
+$btn-info-color:			$gray-lighter !default;
+$btn-info-bg:				$brand-info !default;
+$btn-info-border:			rgba(darken($btn-info-bg, 40%), 0.5) !default;
+
+$btn-warning-color:		$gray-lighter !default;
+$btn-warning-bg:			$brand-warning !default;
+$btn-warning-border:		rgba(darken($btn-warning-bg, 40%), 0.5) !default;
+
+$btn-danger-color:			$gray-lighter !default;
+$btn-danger-bg:			$brand-danger !default;
+$btn-danger-border:		rgba(darken($btn-danger-bg, 40%), 0.5) !default;
+
+$btn-link-disabled-color:	$gray-mid !default;
+
+// Forms
+$input-bg:					$white !default;
+$input-bg-disabled:		$gray-light !default;
+$input-color:				$gray-darker !default;
+$input-border:				rgba($gray, 0.5) !default;
+$input-border-focus:		$reverse-mid !default;
+$input-color-placeholder:	$gray-mid !default;
+
+$legend-color:						$gray-dark !default;
+$legend-border-color:				$gray !default;
+$input-group-addon-bg:			$gray-lighter !default;
+$input-group-addon-border-color:	$gray-light !default;
+
+// Dropdowns
+$dropdown-bg:						mix($white, $gray-lighter, 50%) !default;
+$dropdown-border:				rgba($gray-darkist, 0.2) !default;
+$dropdown-fallback-border:		$gray-lighter !default;
+$dropdown-divider-bg:				$gray-light !default;
+$dropdown-link-color:				$gray-dark !default;
+$dropdown-link-hover-color:		$gray-darkist !default;
+$dropdown-link-hover-bg:			rgba($brand-lighter, 0.5) !default;
+$dropdown-link-active-color:		$component-active-color !default;
+$dropdown-link-active-bg:			$component-active-bg !default;
+$dropdown-link-disabled-color:	$gray-light !default;
+$dropdown-header-color:			$gray-light !default;
+$dropdown-caret-color:			$gray-base !default; //未使用
+
+@import "mediasize";
+
+// Navbar
+$navbar-default-color:				$gray-darker !default;
+$navbar-default-bg:				rgba($brand-lighter, 0.95) !default;
+$navbar-default-border:			darken($navbar-default-bg, 6.5%) !default;
+
+// Navbar links
+$navbar-default-link-color:				$navbar-default-color !default;
+$navbar-default-link-hover-color:		$gray-darkist !default;
+$navbar-default-link-hover-bg:			rgba($brand-light, 0.8) !default;
+$navbar-default-link-active-color:		$navbar-default-color !default;
+$navbar-default-link-active-bg:		rgba($brand-light, 0.5) !default;
+$navbar-default-link-disabled-color:	$brand-primary !default;
+$navbar-default-link-disabled-bg:		transparent !default;
+
+// Navbar brand label
+$navbar-default-brand-color:			$navbar-default-link-color !default;
+$navbar-default-brand-hover-color:	$navbar-default-link-hover-color !default;
+$navbar-default-brand-hover-bg:		transparent !default;
+
+// Navbar toggle
+$navbar-default-toggle-hover-bg:		$navbar-default-link-hover-bg !default;
+$navbar-default-toggle-icon-bar-bg:	$navbar-default-color !default;
+$navbar-default-toggle-border-color:	darken($navbar-default-toggle-icon-bar-bg, 6.5%) !default;
+
+// Inverted navbar
+$navbar-inverse-color:					$gray-lighter !default;
+$navbar-inverse-bg:					rgba($brand-darkist, 0.9) !default;
+$navbar-inverse-border:				darken($navbar-inverse-bg, 6.5%) !default;
+
+// Inverted navbar links
+$navbar-inverse-link-color:			$navbar-inverse-color !default;
+$navbar-inverse-link-hover-color:		$white !default;
+$navbar-inverse-link-hover-bg:		rgba($brand-light, 0.9) !default;
+$navbar-inverse-link-active-color:		$navbar-inverse-color !default;
+$navbar-inverse-link-active-bg:		rgba($brand-light, 0.4) !default;
+$navbar-inverse-link-disabled-color:	$gray-mid !default;
+$navbar-inverse-link-disabled-bg:		transparent !default;
+
+// Inverted navbar brand label
+$navbar-inverse-brand-color:			$navbar-inverse-link-color !default;
+$navbar-inverse-brand-hover-color:	$navbar-inverse-link-hover-color !default;
+$navbar-inverse-brand-hover-bg:		transparent !default;
+
+// Inverted navbar toggle
+$navbar-inverse-toggle-hover-bg:		$navbar-inverse-link-hover-bg !default;
+$navbar-inverse-toggle-icon-bar-bg:	$navbar-inverse-color !default;
+$navbar-inverse-toggle-border-color:	darken($navbar-inverse-toggle-icon-bar-bg, 6.5%) !default;
+
+// Navs
+// Shared nav styles
+$nav-link-hover-bg:					$gray-lighter !default;
+$nav-disabled-link-color:				$gray-light !default;
+$nav-disabled-link-hover-color:		$gray-light !default;
+
+// Tabs
+$nav-tabs-border-color:						$gray-light !default;
+$nav-tabs-link-hover-border-color:			$gray-lighter !default;
+$nav-tabs-active-link-hover-bg:				$body-bg !default;
+$nav-tabs-active-link-hover-color:				$gray !default;
+$nav-tabs-active-link-hover-border-color:		$gray-light !default;
+$nav-tabs-justified-link-border-color:			$gray-light !default;
+$nav-tabs-justified-active-link-border-color:	$body-bg !default;
+
+// Pills
+$nav-pills-active-link-hover-bg:		$component-active-bg !default;
+$nav-pills-active-link-hover-color:		$component-active-color !default;
+
+// Pagination
+$pagination-color:				$gray-dark !default;
+$pagination-bg:				$gray-light !default;
+$pagination-border:			$gray-mid !default;
+$pagination-hover-color:		$gray-darker !default;
+$pagination-hover-bg:			$brand-lighter !default;
+$pagination-hover-border:		$brand-light !default;
+$pagination-active-color:		$gray-dark !default;
+$pagination-active-bg:			$brand-lightest !default;
+$pagination-active-border:		$brand-lighter !default;
+$pagination-disabled-color:	$gray-mid !default;
+$pagination-disabled-bg:		$gray-lighter !default;
+$pagination-disabled-border:	$gray-light !default;
+
+// Pager
+$pager-color:				$pagination-color !default;
+$pager-bg:					$pagination-bg !default;
+$pager-border:				$pagination-border !default;
+$pager-hover-color:		$pagination-hover-color !default;
+$pager-hover-bg:			$pagination-hover-bg !default;
+$pager-hover-border:		$pagination-hover-border !default;
+$pager-active-color:		$pagination-active-color !default;
+$pager-active-bg:			$pagination-active-bg !default;
+$pager-active-color:		$pagination-active-color !default;
+$pager-disabled-color:		$pagination-disabled-color !default;
+$pager-disabled-bg:		$pagination-disabled-bg !default;
+$pager-disabled-border:	$pagination-disabled-border !default;
+
+// Blog-post
+$blog-post-color:				$gray-dark !default;
+$blog-post-link-color:			$link-color !default;
+$blog-post-hover-color:		$link-hover-color !default;
+$blog-post-title-color:			$headings-color !default;
+$blog-post-title-bottom-color:	$gray-mid !default;
+$blog-post-meta-color:		$gray-primary !default;
+
+// Jumbotron
+$jumbotron-color:				$gray-lighter !default;
+$jumbotron-bg:				$white !default;
+$jumbotron-heading-color:	$accennt-base !default;
+
+// Form states and alerts
+$state-success-text:		#3c763d !default;
+$state-success-bg:			#dff0d8 !default;
+$state-success-border:	darken(adjust-hue($state-success-bg, -10), 5%) !default;
+$state-info-text:			#31708f !default;
+$state-info-bg:				#d9edf7 !default;
+$state-info-border:			darken(adjust-hue($state-info-bg, -10), 7%) !default;
+$state-warning-text:		#8a6d3b !default;
+$state-warning-bg:			#fcf8e3 !default;
+$state-warning-border:	darken(adjust-hue($state-warning-bg, -10), 5%) !default;
+$state-danger-text:		#a94442 !default;
+$state-danger-bg:			#f2dede !default;
+$state-danger-border:		darken(adjust-hue($state-danger-bg, -10), 5%) !default;
+
+// Tooltips
+$tooltip-color:				$gray-lighter !default;
+$tooltip-bg:				$gray-dark !default;
+$tooltip-arrow-color:		$tooltip-bg !default;
+
+// Popovers
+$popover-bg:							$gray-lighter !default;
+$popover-border-color:				rgba($gray-darkist, 0.2) !default;
+$popover-fallback-border-color:		$gray-light !default;
+$popover-title-bg:						darken($popover-bg, 3%) !default;
+$popover-arrow-color:					$popover-bg !default;
+$popover-arrow-outer-color:			fade_in($popover-border-color, 0.05) !default;
+$popover-arrow-outer-fallback-color:	darken($popover-fallback-border-color, 20%) !default;
+
+// Labels
+$label-default-bg:			$gray-light !default;
+$label-primary-bg:			$brand-primary !default;
+$label-success-bg:			$brand-success !default;
+$label-info-bg:				$brand-info !default;
+$label-warning-bg:			$brand-warning !default;
+$label-danger-bg:			$brand-danger !default;
+$label-color:				$gray-lighter !default;
+$label-link-hover-color:	$gray-lighter !default;
+
+// Modals
+$modal-content-bg:						$gray-lighter !default;
+$modal-content-border-color:				rgba($gray-darker, 0.2) !default;
+$modal-content-fallback-border-color:	$gray-mid !default;
+$modal-backdrop-bg:						$gray-darkist !default;
+$modal-backdrop-opacity:					0.5 !default;
+$modal-header-border-color:				$gray-light !default;
+$modal-footer-border-color:				$modal-header-border-color !default;
+
+// Alerts
+$alert-success-bg:		$state-success-bg !default;
+$alert-success-text:	$state-success-text !default;
+$alert-success-border:	$state-success-border !default;
+$alert-info-bg:			$state-info-bg !default;
+$alert-info-text:		$state-info-text !default;
+$alert-info-border:		$state-info-border !default;
+$alert-warning-bg:		$state-warning-bg !default;
+$alert-warning-text:	$state-warning-text !default;
+$alert-warning-border:	$state-warning-border !default;
+$alert-danger-bg:		$state-danger-bg !default;
+$alert-danger-text:		$state-danger-text !default;
+$alert-danger-border:	$state-danger-border !default;
+
+// Progress bars
+$progress-bg:					$gray-lighter !default;
+$progress-bar-color:			$gray-lighter !default;
+$progress-bar-bg:				$brand-primary !default;
+$progress-bar-success-bg:	$brand-success !default;
+$progress-bar-warning-bg:	$brand-warning !default;
+$progress-bar-danger-bg:		$brand-danger !default;
+$progress-bar-info-bg:		$brand-info !default;
+
+// List group
+$list-group-bg:						$brand-base !default;
+$list-group-hover-bg:				$brand-primary !default;
+$list-group-border:					$brand-primary !default;
+
+$list-group-active-bg:				$brand-darker !default;
+$list-group-active-hover-bg:		$brand-dark !default;
+$list-group-active-border:			$brand-darker !default;
+$list-group-active-heading-color:	$brand-dark !default;
+
+$list-group-disabled-bg:			$brand-lighter !default;
+$list-group-disabled-border:		$brand-light !default;
+$list-group-disabled-color:			$brand-mid !default;
+
+$list-group-link-color:				$gray-lighter !default;
+$list-group-link-hover-color:		$white !default;
+$list-group-link-heading-color:		$accennt-base !default;
+
+// Panels
+$panel-bg:                    $gray-lighter !default;
+
+//** Border color for elements within panels
+$panel-inner-border:			$gray-light !default;
+$panel-footer-bg:				$gray-lighter !default;
+$panel-default-text:			$gray-dark !default;
+$panel-default-border:			$gray-light !default;
+$panel-default-heading-bg:	$gray-lighter !default;
+$panel-primary-text:			$gray-lighter !default;
+$panel-primary-border:		$brand-primary !default;
+$panel-primary-heading-bg:	$brand-primary !default;
+$panel-success-text:			$state-success-text !default;
+$panel-success-border:		$state-success-border !default;
+$panel-success-heading-bg:	$state-success-bg !default;
+$panel-info-text:				$state-info-text !default;
+$panel-info-border:			$state-info-border !default;
+$panel-info-heading-bg:		$state-info-bg !default;
+$panel-warning-text:			$state-warning-text !default;
+$panel-warning-border:		$state-warning-border !default;
+$panel-warning-heading-bg:	$state-warning-bg !default;
+$panel-danger-text:			$state-danger-text !default;
+$panel-danger-border:			$state-danger-border !default;
+$panel-danger-heading-bg:	$state-danger-bg !default;
+
+// Thumbnails
+$thumbnail-bg:					$body-bg !default;
+$thumbnail-border:			$gray-light !default;
+$thumbnail-caption-color:		$text-color !default;
+
+// Wells
+$well-bg:			$gray-lighter !default;
+$well-border:		darken($well-bg, 7%) !default;
+
+// Badges
+$badge-color:				$gray-lighter !default;
+$badge-link-hover-color:	$gray-lighter !default;
+$badge-bg:					$gray-light !default;
+$badge-active-color:		$link-color !default;
+$badge-active-bg:			$gray-lighter !default;
+
+// Breadcrumbs
+$breadcrumb-bg:			transparent !default;
+$breadcrumb-color:		$gray-light !default;
+$breadcrumb-active-color:	$gray !default;
+
+// Carousel
+$carousel-text-shadow:			0 1px 2px rgba($gray-darkist, 0.6) !default;
+$carousel-control-color:			$gray-lighter !default;
+$carousel-control-opacity:			0.5 !default;
+$carousel-indicator-active-bg:		$gray-lighter !default;
+$carousel-indicator-border-color:	$gray-lighter !default;
+$carousel-caption-color:			$gray-lighter !default;
+
+// Close
+$close-color:					$gray-darkist !default;
+$close-text-shadow:			0 1px 0 $gray-lighter !default;
+
+// Code
+$code-color:					$reverse-primary !default;
+$code-bg:						$reverse-lighter !default;
+$kbd-color:						$gray-lighter !default;
+$kbd-bg:						$gray-darker !default;
+$pre-bg:						$gray-lighter !default;
+$pre-color:						$gray-dark !default;
+$pre-border-color:				$gray-light !default;
+
+// Type
+$text-muted:					$gray-mid !default;
+$abbr-border-color:			$gray-mid !default;
+$headings-small-color:			$gray-mid !default;
+$blockquote-small-color:		$gray-mid !default;
+$blockquote-border-color:		$gray-light !default;
+$page-header-border-color:	$gray-light !default;
+$hr-border:					$gray-light !default;

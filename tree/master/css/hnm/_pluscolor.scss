@@ -1,0 +1,85 @@
+
+// Colors
+$defcolor: (#576d87, #2076bf, #f6bf0a); //デフォルトカラー（ブルーグレイ／黄）
+$aka01: (#A72519, #e35219, #f3b10c); //赤／黄
+$gld01: (#d8b803, #cf970a, #25467c); //金／青
+$grn01: (#25493E, #4A7B43, #F9D004); //緑／黄
+$kon01: (#3668bb, #2C6397, #F9D004); //青／黄
+$ppr01: (#9C2474, #744199, #F2BC09); //紫／黄
+$vil01: (#744199, #9C2474, #F2BC09); //バイオレット／黄
+
+$setcolor: $defcolor;
+//$setcolor: $aka01;
+//$setcolor: $grn01;
+//$setcolor: $kon01;
+//$setcolor: $gld01;
+//$setcolor: $ppr01;
+//$setcolor: $vil01;
+$brand: nth($setcolor,1);
+$reverse: nth($setcolor,2);
+$accennt: nth($setcolor, 3);
+
+// トランスレーション
+$link-transition: 0.5s;
+
+//明度
+$hnm_lt: 25%, 33%, 40%, 50%, 58%, 70%, 85%, 95%, 98%;
+//ベースカラー
+$hnm_brand: hue($brand), saturation($brand), lightness($brand);
+//リバースカラー
+$hnm_reverse: hue($reverse), saturation($reverse), lightness($reverse);
+//アクセントカラー
+$hnm_accennt: hue($accennt), saturation($accennt), lightness($accennt);
+
+// グレイベース
+$gray-base:		#000000 !default; //ブラック
+$gray-darkist:		lighten($gray-base, nth($hnm_lt, 1)) !default;
+$gray-darker:		lighten($gray-base, nth($hnm_lt, 2)) !default;
+$gray-dark:		lighten($gray-base, nth($hnm_lt, 3)) !default;
+$gray-primary:		lighten($gray-base, nth($hnm_lt, 4)) !default;
+$gray:				lighten($gray-base, nth($hnm_lt, 5)) !default;
+$gray-mid:			lighten($gray-base, nth($hnm_lt, 6)) !default;
+$gray-light:			lighten($gray-base, nth($hnm_lt, 7)) !default;
+$gray-lighter:		lighten($gray-base, nth($hnm_lt, 8)) !default;
+$gray-lightest:		lighten($gray-base, nth($hnm_lt, 9)) !default;
+$white:				#ffffff !default;
+
+// ベースカラー
+$d : nth($hnm_brand,3)/4;
+$l : (nth($hnm_lt,9) - nth($hnm_brand,3))/4;
+$brand-darkist:	hsl(nth($hnm_brand,1), nth($hnm_brand,2), nth($hnm_brand,3) - $d*2) !default;
+$brand-darker:		hsl(nth($hnm_brand,1), nth($hnm_brand,2), nth($hnm_brand,3) - $d*1.5) !default;
+$brand-dark:		hsl(nth($hnm_brand,1), nth($hnm_brand,2), nth($hnm_brand,3) - $d) !default;
+$brand-primary:	hsl(nth($hnm_brand,1), nth($hnm_brand,2), nth($hnm_brand,3) - $d*0.5) !default;
+$brand-base:		$brand !default;
+$brand-mid:		hsl(nth($hnm_brand,1), nth($hnm_brand,2), nth($hnm_brand,3) + $l) !default;
+$brand-light:		hsl(nth($hnm_brand,1), nth($hnm_brand,2), nth($hnm_brand,3) + $l*2) !default;
+$brand-lighter:		hsl(nth($hnm_brand,1), nth($hnm_brand,2), nth($hnm_brand,3) + $l*3) !default;
+$brand-lightest:	hsl(nth($hnm_brand,1), nth($hnm_brand,2), nth($hnm_lt,9)) !default;
+
+// リバースカラー
+$d : nth($hnm_reverse,3)/4;
+$l : (nth($hnm_lt,9) - nth($hnm_reverse,3))/4;
+$reverse-darkist:	hsl(nth($hnm_reverse,1), nth($hnm_reverse,2), nth($hnm_reverse,3) - $d*2) !default;
+$reverse-darker:	hsl(nth($hnm_reverse,1), nth($hnm_reverse,2), nth($hnm_reverse,3) - $d*1.5) !default;
+$reverse-dark:		hsl(nth($hnm_reverse,1), nth($hnm_reverse,2), nth($hnm_reverse,3) - $d) !default;
+$reverse-primary:	hsl(nth($hnm_reverse,1), nth($hnm_reverse,2), nth($hnm_reverse,3) - $d*0.5) !default;
+$reverse-base:		$reverse !default;
+$reverse-mid:		hsl(nth($hnm_reverse,1), nth($hnm_reverse,2), nth($hnm_reverse,3) + $l) !default;
+$reverse-light:		hsl(nth($hnm_reverse,1), nth($hnm_reverse,2), nth($hnm_reverse,3) + $l*2) !default;
+$reverse-lighter:	hsl(nth($hnm_reverse,1), nth($hnm_reverse,2), nth($hnm_reverse,3) + $l*3) !default;
+$reverse-lightest:	hsl(nth($hnm_reverse,1), nth($hnm_reverse,2), nth($hnm_lt,9)) !default;
+
+// アクセントカラー
+$d : nth($hnm_accennt,3)/4;
+$l : (nth($hnm_lt,9) - nth($hnm_accennt,3))/4;
+$accennt-darkist:	hsl(nth($hnm_accennt,1), nth($hnm_accennt,2), nth($hnm_accennt,3) - $d*2) !default;
+$accennt-darker:	hsl(nth($hnm_accennt,1), nth($hnm_accennt,2), nth($hnm_accennt,3) - $d*1.5) !default;
+$accennt-dark:		hsl(nth($hnm_accennt,1), nth($hnm_accennt,2), nth($hnm_accennt,3) - $d) !default;
+$accennt-primary:	hsl(nth($hnm_accennt,1), nth($hnm_accennt,2), nth($hnm_accennt,3) - $d*0.5) !default;
+$accennt-base:		$accennt !default;
+$accennt-mid:		hsl(nth($hnm_accennt,1), nth($hnm_accennt,2), nth($hnm_accennt,3) + $l) !default;
+$accennt-light:		hsl(nth($hnm_accennt,1), nth($hnm_accennt,2), nth($hnm_accennt,3) + $l*2) !default;
+$accennt-lighter:	hsl(nth($hnm_accennt,1), nth($hnm_accennt,2), nth($hnm_accennt,3) + $l*3) !default;
+$accennt-lightest:	hsl(nth($hnm_accennt,1), nth($hnm_accennt,2), nth($hnm_lt,9)) !default;
+

@@ -1,0 +1,74 @@
+//
+// Jumbotron
+// --------------------------------------------------
+
+.jumbotron {
+	padding-top:	$jumbotron-padding;
+	padding-bottom: $jumbotron-padding;
+	margin-bottom: $jumbotron-padding;
+	color: $jumbotron-color;
+	background-color: $jumbotron-bg;
+
+	h1, .h1 {
+		color: $jumbotron-heading-color;
+		font-size: $jumbotron-heading-font-size-xs;
+		font-weight: $jumbotron-heading-weight-size-xs;
+	}
+
+	p {
+		margin-bottom: ($jumbotron-padding / 2);
+		font-size: $font-size-base;
+		font-weight: 400;
+	}
+
+	> hr {
+		border-top-color: darken($jumbotron-bg, 10%);
+	}
+
+	.container &,
+	.container-fluid & {
+		border-radius: $border-radius-large; // Only round corners at higher resolutions if contained in a container
+		padding-left:  ($grid-gutter-width / 2);
+		padding-right: ($grid-gutter-width / 2);
+	}
+
+	.container {
+		max-width: 100%;
+	}
+	
+	@media (min-width: $screen-xs-min) {
+		h1, .h1{ 
+			font-size: $jumbotron-heading-font-size-xs;
+			font-weight: $jumbotron-heading-weight-size-xs;
+		}
+	}
+	@media (min-width: $screen-sm-min) {
+		// padding-top:    ($jumbotron-padding * 1.6);
+		// padding-bottom: ($jumbotron-padding * 1.6);
+		// .container &,
+		// .container-fluid & {
+		// 	padding-left:  ($jumbotron-padding * 2);
+		// 	padding-right: ($jumbotron-padding * 2);
+		// }
+		h1, .h1 {
+			font-size: $jumbotron-heading-font-size-sm;
+			font-weight: $jumbotron-heading-weight-size-sm;
+		}
+		p{font-size: $jumbotron-font-size;}
+	}
+	@media (min-width: $screen-md-min) {
+		h1, .h1{ 
+			font-size: $jumbotron-heading-font-size-md;
+			font-weight: $jumbotron-heading-weight-size-md;
+		}
+		p{font-size: $jumbotron-font-size;}
+	}
+	@media (min-width: $screen-lg-min) {
+		h1, .h1{ 
+			font-size: $jumbotron-heading-font-size;
+			font-weight: $jumbotron-heading-weight-size;
+		}
+		p{font-size: $jumbotron-font-size;}
+	}
+}
+
